@@ -1,5 +1,64 @@
 # Git Branch Management Tools
 
+## Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/git-branch-management-tools.git
+   cd git-branch-management-tools
+   ```
+
+2. **Make the scripts executable**
+
+   ```bash
+   chmod +x git-branch-stats.sh clean-up-branches.sh
+   ```
+
+3. **(Optional) Install the scripts globally as `branches` and `prune-branches`**
+
+   To use the tools as simple commands from anywhere, copy them to a directory in your `PATH` and rename:
+
+   ```bash
+   sudo cp git-branch-stats.sh /usr/local/bin/branches
+   sudo cp clean-up-branches.sh /usr/local/bin/prune-branches
+   ```
+
+   > **Tip:** You can use any directory in your `PATH` (e.g., `~/.local/bin` for user installs).
+
+4. **(Alternative) Add aliases to your shell profile**
+
+   If you prefer not to copy the scripts, add these aliases to your `~/.bashrc`, `~/.zshrc`, or equivalent:
+
+   ```bash
+   alias branches="$PWD/git-branch-stats.sh"
+   alias prune-branches="$PWD/clean-up-branches.sh"
+   ```
+
+   Then reload your shell configuration:
+
+   ```bash
+   source ~/.bashrc   # or source ~/.zshrc
+   ```
+
+5. **Verify installation**
+
+   Run the following commands to ensure the tools are accessible:
+
+   ```bash
+   branches --help
+   prune-branches --help
+   ```
+
+**Requirements:**
+
+- A Unix-like environment (Linux, macOS, WSL)
+- Bash shell
+- Git installed
+- Standard Unix tools (`awk`, `sed`, `date`)
+
+For more details and usage examples, see the sections below.
+
 This repository contains two complementary bash scripts for managing git branches effectively:
 
 1. **`git-branch-stats.sh`** - Analyze and display detailed statistics about all local branches
